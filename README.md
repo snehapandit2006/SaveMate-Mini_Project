@@ -100,6 +100,7 @@ cd ai-service
 # create venv & install
 pip install -r requirements.txt
 uvicorn src.main:app --reload --port 8001
+```
 📦 Deployment hints
 Use managed Postgres (Supabase / Neon / RDS) and enable SSL in db.js.
 
@@ -132,7 +133,7 @@ CI: .github/workflows/ci.yml — lint, test, build, (optional) dockerize.
 | **Sneha Pandit** | Backend & Security Lead   | [sneha.pandit_cs.aiml23@gla.ac.in](mailto:sneha.pandit_cs.aiml23@gla.ac.in) | [sneha20061901@gmail.com](mailto:sneha20061901@gmail.com)   | GLA University, Mathura |
 | **Shristi Negi** | AI & UX Prototyping       | [shristi.negi_cs.aiml23@gla.ac.in](mailto:shristi.negi_cs.aiml23@gla.ac.in) | [shristinegi658@gmail.com](mailto:shristinegi658@gmail.com) | GLA University, Mathura |
 | **Avani Garg**   | Frontend & ML Integration | [avani.garg_cs.aiml23@gla.ac.in](mailto:avani.garg_cs.aiml23@gla.ac.in)     | [gargavni2005@gmail.com](mailto:gargavni2005@gmail.com)     | GLA University, Mathura |
-S
+
 
 📝 License
 MIT © 2025 Team SaveMate

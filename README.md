@@ -8,7 +8,7 @@
 [![Status](https://img.shields.io/badge/Status-In%20Progress-orange)]()
 
 > SaveMate is a smart personal finance and savings management web application that combines financial discipline, gamified learning, and AI insights to make money management easy and engaging.
-          > It enables users to: 
+          It enables users to: 
                    1. Set budgets and saving goals 🏦
                    2. Track expenses and spending habits 💳
                    3. Receive AI-powered money tips 🧠

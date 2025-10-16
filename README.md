@@ -59,126 +59,126 @@
 
 ---
 ## 🧱 Project Structure
+```
+          save-mate/
+          │
+          ├── frontend/                      # React app (Web) + UI kit
+          │   ├── package.json
+          │   ├── .env                      # FRONTEND env (API_URL, VITE_...)
+          │   ├── tailwind.config.js
+          │   ├── postcss.config.js
+          │   ├── public/
+          │   │   └── index.html
+          │   └── src/
+          │       ├── main.jsx               # React entry (Vite/CRA)
+          │       ├── App.jsx
+          │       ├── index.css
+          │       ├── api/                   # axios instances, auth interceptors
+          │       │   └── apiClient.js
+          │       ├── assets/                # images, logo, icons, lottie
+          │       ├── components/            # small reusable components (Button, Modal)
+          │       │   ├── ui/
+          │       │   │   ├── Button.jsx
+          │       │   │   └── Card.jsx
+          │       │   └── layout/
+          │       │       ├── Header.jsx
+          │       │       └── Footer.jsx
+          │       ├── features/              # feature-level components
+          │       │   ├── auth/
+          │       │   │   ├── Login.jsx
+          │       │   │   ├── Register.jsx
+          │       │   │   └── VerifyOtp.jsx
+          │       │   ├── dashboard/
+          │       │   │   ├── Dashboard.jsx
+          │       │   │   └── Charts.jsx
+          │       │   ├── expenses/
+          │       │   │   ├── ExpenseList.jsx
+          │       │   │   └── ExpenseForm.jsx
+          │       │   ├── goals/
+          │       │   │   ├── GoalsList.jsx
+          │       │   │   └── GoalForm.jsx
+          │       │   └── parental/
+          │       │       └── ParentalLockModal.jsx
+          │       ├── context/               # React context (AuthContext)
+          │       │   └── AuthContext.jsx
+          │       ├── hooks/                 # custom hooks (useAuth, useFetch)
+          │       ├── services/              # client-side business logic (aiService.js)
+          │       ├── routes/                # route definitions (React Router)
+          │       └── utils/                 # helpers (formatCurrency, validators)
+          │
+          ├── backend/                       # Node.js + Express API
+          │   ├── package.json
+          │   ├── .env
+          │   ├── .env.example
+          │   ├── Dockerfile
+          │   ├── docker-compose.yml        # local dev with db + redis
+          │   ├── src/
+          │   │   ├── index.js              # server bootstrap
+          │   │   ├── app.js                # express app, middleware, routes
+          │   │   ├── config/
+          │   │   │   ├── db.js             # Sequelize setup
+          │   │   │   └── logger.js
+          │   │   ├── controllers/
+          │   │   │   ├── authController.js
+          │   │   │   ├── expenseController.js
+          │   │   │   ├── goalController.js
+          │   │   │   ├── budgetController.js
+          │   │   │   └── parentalController.js
+          │   │   ├── routes/
+          │   │   │   ├── auth.js
+          │   │   │   ├── expenses.js
+          │   │   │   ├── goals.js
+          │   │   │   ├── budget.js
+          │   │   │   └── parental.js
+          │   │   ├── models/
+          │   │   │   ├── index.js          # load & associate models
+          │   │   │   ├── user.js
+          │   │   │   ├── expense.js
+          │   │   │   ├── goal.js
+          │   │   │   └── budget.js
+          │   │   ├── services/
+          │   │   │   ├── aiService.js      # calls to AI microservice
+          │   │   │   ├── notificationService.js
+          │   │   │   └── budgetService.js
+          │   │   ├── utils/
+          │   │   │   ├── crypto.js         # AES-256 encrypt/decrypt
+          │   │   │   ├── otp.js            # OTP generator/store (redis-ready)
+          │   │   │   └── email.js          # nodemailer wrapper
+          │   │   ├── middleware/
+          │   │   │   ├── auth.js
+          │   │   │   ├── roles.js
+          │   │   │   ├── errorHandler.js
+          │   │   │   └── rateLimiter.js
+          │   │   └── jobs/                 # background jobs (cron or bull)
+          │   │       └── budgetAlertJob.js
+          │   ├── migrations/               # Sequelize migrations
+          │   ├── seeders/                  # seed data
+          │   └── tests/                    # unit / integration tests (jest/supertest)
+          │
+          ├── ai-service/                    # optional microservice for AI summarization
+          │   ├── package.json
+          │   ├── src/
+          │   │   ├── main.py                # FastAPI app
+          │   │   ├── model_runner.py        # TF/PyTorch or HF pipeline wrapper
+          │   │   └── routes.py              # /summarize endpoint
+          │   └── Dockerfile
+          │
+          ├── infra/                         # infra manifests, docs, terraform (optional)
+          │   ├── k8s/                       # k8s manifests (deployment, svc)
+          │   └── terraform/                 # infra-as-code (RDS, Redis, S3)
+          │
+          ├── docs/
+          │   ├── ERD.png
+          │   ├── architecture.pdf
+          │   └── SaveMate_API.postman_collection.json
+          │
+          ├── .github/
+          │   └── workflows/
+          │       └── ci.yml                 # CI: lint, test, build, docker
+          │
+          └── README.md                      # top-level project README (monorepo)
 
-save-mate/
-│
-├── frontend/                      # React app (Web) + UI kit
-│   ├── package.json
-│   ├── .env                      # FRONTEND env (API_URL, VITE_...)
-│   ├── tailwind.config.js
-│   ├── postcss.config.js
-│   ├── public/
-│   │   └── index.html
-│   └── src/
-│       ├── main.jsx               # React entry (Vite/CRA)
-│       ├── App.jsx
-│       ├── index.css
-│       ├── api/                   # axios instances, auth interceptors
-│       │   └── apiClient.js
-│       ├── assets/                # images, logo, icons, lottie
-│       ├── components/            # small reusable components (Button, Modal)
-│       │   ├── ui/
-│       │   │   ├── Button.jsx
-│       │   │   └── Card.jsx
-│       │   └── layout/
-│       │       ├── Header.jsx
-│       │       └── Footer.jsx
-│       ├── features/              # feature-level components
-│       │   ├── auth/
-│       │   │   ├── Login.jsx
-│       │   │   ├── Register.jsx
-│       │   │   └── VerifyOtp.jsx
-│       │   ├── dashboard/
-│       │   │   ├── Dashboard.jsx
-│       │   │   └── Charts.jsx
-│       │   ├── expenses/
-│       │   │   ├── ExpenseList.jsx
-│       │   │   └── ExpenseForm.jsx
-│       │   ├── goals/
-│       │   │   ├── GoalsList.jsx
-│       │   │   └── GoalForm.jsx
-│       │   └── parental/
-│       │       └── ParentalLockModal.jsx
-│       ├── context/               # React context (AuthContext)
-│       │   └── AuthContext.jsx
-│       ├── hooks/                 # custom hooks (useAuth, useFetch)
-│       ├── services/              # client-side business logic (aiService.js)
-│       ├── routes/                # route definitions (React Router)
-│       └── utils/                 # helpers (formatCurrency, validators)
-│
-├── backend/                       # Node.js + Express API
-│   ├── package.json
-│   ├── .env
-│   ├── .env.example
-│   ├── Dockerfile
-│   ├── docker-compose.yml        # local dev with db + redis
-│   ├── src/
-│   │   ├── index.js              # server bootstrap
-│   │   ├── app.js                # express app, middleware, routes
-│   │   ├── config/
-│   │   │   ├── db.js             # Sequelize setup
-│   │   │   └── logger.js
-│   │   ├── controllers/
-│   │   │   ├── authController.js
-│   │   │   ├── expenseController.js
-│   │   │   ├── goalController.js
-│   │   │   ├── budgetController.js
-│   │   │   └── parentalController.js
-│   │   ├── routes/
-│   │   │   ├── auth.js
-│   │   │   ├── expenses.js
-│   │   │   ├── goals.js
-│   │   │   ├── budget.js
-│   │   │   └── parental.js
-│   │   ├── models/
-│   │   │   ├── index.js          # load & associate models
-│   │   │   ├── user.js
-│   │   │   ├── expense.js
-│   │   │   ├── goal.js
-│   │   │   └── budget.js
-│   │   ├── services/
-│   │   │   ├── aiService.js      # calls to AI microservice
-│   │   │   ├── notificationService.js
-│   │   │   └── budgetService.js
-│   │   ├── utils/
-│   │   │   ├── crypto.js         # AES-256 encrypt/decrypt
-│   │   │   ├── otp.js            # OTP generator/store (redis-ready)
-│   │   │   └── email.js          # nodemailer wrapper
-│   │   ├── middleware/
-│   │   │   ├── auth.js
-│   │   │   ├── roles.js
-│   │   │   ├── errorHandler.js
-│   │   │   └── rateLimiter.js
-│   │   └── jobs/                 # background jobs (cron or bull)
-│   │       └── budgetAlertJob.js
-│   ├── migrations/               # Sequelize migrations
-│   ├── seeders/                  # seed data
-│   └── tests/                    # unit / integration tests (jest/supertest)
-│
-├── ai-service/                    # optional microservice for AI summarization
-│   ├── package.json
-│   ├── src/
-│   │   ├── main.py                # FastAPI app
-│   │   ├── model_runner.py        # TF/PyTorch or HF pipeline wrapper
-│   │   └── routes.py              # /summarize endpoint
-│   └── Dockerfile
-│
-├── infra/                         # infra manifests, docs, terraform (optional)
-│   ├── k8s/                       # k8s manifests (deployment, svc)
-│   └── terraform/                 # infra-as-code (RDS, Redis, S3)
-│
-├── docs/
-│   ├── ERD.png
-│   ├── architecture.pdf
-│   └── SaveMate_API.postman_collection.json
-│
-├── .github/
-│   └── workflows/
-│       └── ci.yml                 # CI: lint, test, build, docker
-│
-└── README.md                      # top-level project README (monorepo)
-
-
+```
 ---
 
 ## 🧩 Setup & Installation

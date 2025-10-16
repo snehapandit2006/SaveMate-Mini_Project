@@ -106,30 +106,32 @@ Server will run at: http://localhost:4000
 ```
 🔥 API Endpoints
 Method	Endpoint	Description
-POST	/api/auth/register	Register a new user
-POST	/api/auth/login	Login and receive JWT
-POST	/api/auth/verify-otp	Verify OTP for email or parental lock
-GET	/api/expenses	Get all expenses for the logged-in user
-POST	/api/expenses	Add a new expense
-GET	/api/goals	View all savings goals
-POST	/api/goals	Create a new goal
-GET	/api/budget	Get current budget summary (planned)
+```
+          POST	/api/auth/register	Register a new user
+          POST	/api/auth/login	Login and receive JWT
+          POST	/api/auth/verify-otp	Verify OTP for email or parental lock
+          GET	/api/expenses	Get all expenses for the logged-in user
+          POST	/api/expenses	Add a new expense
+          GET	/api/goals	View all savings goals
+          POST	/api/goals	Create a new goal
+          GET	/api/budget	Get current budget summary (planned)
+
 🧠 Roadmap
-Phase	Goal	Status
-Phase 1	Auth System (JWT + OTP + Argon2)	✅ Completed
-Phase 2	Expense & Goal APIs (CRUD)	🟡 In Progress
-Phase 3	Budget Control + Parental Lock	⚙️ Designing
-Phase 4	AI Integration (Hugging Face Models)	⏳ Upcoming
-Phase 5	Full Deployment + Testing	⏳ Upcoming
+          Phase	Goal	Status
+          Phase 1	Auth System (JWT + OTP + Argon2)	✅ Completed
+          Phase 2	Expense & Goal APIs (CRUD)	🟡 In Progress
+          Phase 3	Budget Control + Parental Lock	⚙️ Designing
+          Phase 4	AI Integration (Hugging Face Models)	⏳ Upcoming
+          Phase 5	Full Deployment + Testing	⏳ Upcoming
 👨‍💻 Team
-Name	Role	Responsibilities
-Sneha Pandit	Backend & Security Lead	Auth, Database, Encryption, APIs
-Avani Garg	Frontend & ML Integration	React UI, OTP workflows, AI feed
-Shristi Negi	AI & UX Prototyping	AI summarizer, model integration
+          Name	                Role                              	Responsibilities
+          Sneha Pandit	    Backend & Security Lead	          Auth, Database, Encryption, APIs
+          Avani Garg	      Frontend & ML Integration       	React UI, OTP workflows, AI feed
+          Shristi Negi	    AI & UX Prototyping	              AI summarizer, model integration
 🧾 License
 
-This project is licensed under the MIT License
-.
+This project is licensed under the MIT License.
+```
 
 🌟 Acknowledgements
 

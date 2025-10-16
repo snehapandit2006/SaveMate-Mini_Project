@@ -102,31 +102,22 @@ pip install -r requirements.txt
 uvicorn src.main:app --reload --port 8001
 ```
 📦 Deployment hints
-Use managed Postgres (Supabase / Neon / RDS) and enable SSL in db.js.
-
-Store secrets in environment variables or a secret manager (do not commit .env).
-
-Use Redis for OTP store & caching; replace in-memory OTP store before production.
-
-Add rate limiting for OTP endpoints and login.
+  Use managed Postgres (Supabase / Neon / RDS) and enable SSL in db.js.
+  Store secrets in environment variables or a secret manager (do not commit .env).
+  Use Redis for OTP store & caching; replace in-memory OTP store before production.
+  Add rate limiting for OTP endpoints and login.
 
 🧪 Testing & CI
-Tests: backend uses Jest + Supertest for integration tests; frontend uses Vitest or Jest.
-
-CI: .github/workflows/ci.yml — lint, test, build, (optional) dockerize.
+  Tests: backend uses Jest + Supertest for integration tests; frontend uses Vitest or Jest.
+  CI: .github/workflows/ci.yml — lint, test, build, (optional) dockerize.
 
 📈 Roadmap (short)
- Auth: JWT + OTP + Argon2
-
- DB: PostgreSQL models (User, Expense, Goal)
-
- Expense & Goal CRUD (complete + testing)
-
- Budget & Parental Lock (integration)
-
- AI fine-tuning & production deployment
-
- Security audit & final deployment
+   Auth: JWT + OTP + Argon2
+   DB: PostgreSQL models (User, Expense, Goal)
+   Expense & Goal CRUD (complete + testing)
+   Budget & Parental Lock (integration)
+   AI fine-tuning & production deployment
+   Security audit & final deployment
 
 | Name             | Role                      | Email                                                                       | GitHub                                                      | Institute               |
 | ---------------- | ------------------------- | --------------------------------------------------------------------------- | ----------------------------------------------------------- | ----------------------- |

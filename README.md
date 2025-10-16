@@ -7,7 +7,12 @@
 [![Security](https://img.shields.io/badge/Security-AES--256%20%7C%20Argon2-red)]()
 [![Status](https://img.shields.io/badge/Status-In%20Progress-orange)]()
 
-> Backend for **SaveMate**, an AI-powered personal finance and savings management platform designed to help students and young earners build financial discipline, manage expenses, set savings goals, and learn smarter money habits.
+> SaveMate is a smart personal finance and savings management web application that combines financial discipline, gamified learning, and AI insights to make money management easy and engaging.
+          > It enables users to: 
+                   1. Set budgets and saving goals 🏦
+                   2. Track expenses and spending habits 💳
+                   3. Receive AI-powered money tips 🧠
+                   4. Enable parental control and OTP-based locks for minors 🔐
 
 ---
 

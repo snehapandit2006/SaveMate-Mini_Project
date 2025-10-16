@@ -64,15 +64,13 @@
 
 # 🧩 Repo structure (short)
 
-save-mate/
-├─ frontend/ # React + Tailwind app
-├─ backend/ # Node/Express API (Sequelize + Postgres)
-├─ ai-service/ # FastAPI summarizer (HuggingFace)
-├─ docs/ # diagrams, postman collection
-└─ README.md
+  save-mate/
+  ├─ frontend/ # React + Tailwind app
+  ├─ backend/ # Node/Express API (Sequelize + Postgres)
+  ├─ ai-service/ # FastAPI summarizer (HuggingFace)
+  ├─ docs/ # diagrams, postman collection
+  └─ README.md
 
-yaml
-Copy code
 
 ---
 
@@ -85,17 +83,17 @@ cp .env.example .env
 # edit .env (DATABASE_URL, JWT_SECRET, AES_SECRET)
 npm install
 npm run dev
-Frontend
-bash
-Copy code
+```
+## Frontend
+```
 cd frontend
 cp .env.example .env
 # set VITE_API_URL
 npm install
 npm run dev
-AI Service (optional)
-bash
-Copy code
+```
+## AI Service (optional)
+```
 cd ai-service
 # create venv & install
 pip install -r requirements.txt
@@ -106,10 +104,12 @@ uvicorn src.main:app --reload --port 8001
   Store secrets in environment variables or a secret manager (do not commit .env).
   Use Redis for OTP store & caching; replace in-memory OTP store before production.
   Add rate limiting for OTP endpoints and login.
+  
 
 🧪 Testing & CI
   Tests: backend uses Jest + Supertest for integration tests; frontend uses Vitest or Jest.
   CI: .github/workflows/ci.yml — lint, test, build, (optional) dockerize.
+  
 
 📈 Roadmap (short)
    Auth: JWT + OTP + Argon2
@@ -118,6 +118,9 @@ uvicorn src.main:app --reload --port 8001
    Budget & Parental Lock (integration)
    AI fine-tuning & production deployment
    Security audit & final deployment
+   
+
+👩‍💻 Contributors
 
 | Name             | Role                      | Email                                                                       | GitHub                                                      | Institute               |
 | ---------------- | ------------------------- | --------------------------------------------------------------------------- | ----------------------------------------------------------- | ----------------------- |
@@ -126,7 +129,16 @@ uvicorn src.main:app --reload --port 8001
 | **Avani Garg**   | Frontend & ML Integration | [avani.garg_cs.aiml23@gla.ac.in](mailto:avani.garg_cs.aiml23@gla.ac.in)     | [gargavni2005@gmail.com](mailto:gargavni2005@gmail.com)     | GLA University, Mathura |
 
 
+📚 References & Resources
+
+  Sequelize docs — https://sequelize.org
+  HuggingFace models — https://huggingface.co/models
+  OWASP best practices — https://owasp.org
+  Node & Express security — Helmet, rate-limit, CORS
+
 📝 License
+
 MIT © 2025 Team SaveMate
+
 
 ---

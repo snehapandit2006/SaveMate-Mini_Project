@@ -64,12 +64,12 @@
 
 # 🧩 Repo structure (short)
 
-  save-mate/
-  ├─ frontend/ # React + Tailwind app
-  ├─ backend/ # Node/Express API (Sequelize + Postgres)
-  ├─ ai-service/ # FastAPI summarizer (HuggingFace)
-  ├─ docs/ # diagrams, postman collection
-  └─ README.md
+    save-mate/
+    ├─ frontend/ # React + Tailwind app
+    ├─ backend/ # Node/Express API (Sequelize + Postgres)
+    ├─ ai-service/ # FastAPI summarizer (HuggingFace)
+    ├─ docs/ # diagrams, postman collection
+    └─ README.md
 
 
 ---

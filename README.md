@@ -131,10 +131,10 @@ uvicorn src.main:app --reload --port 8001
 
 📚 References & Resources
 
-  Sequelize docs — https://sequelize.org
-  HuggingFace models — https://huggingface.co/models
-  OWASP best practices — https://owasp.org
-  Node & Express security — Helmet, rate-limit, CORS
+    Sequelize docs — https://sequelize.org
+    HuggingFace models — https://huggingface.co/models
+    OWASP best practices — https://owasp.org
+    Node & Express security — Helmet, rate-limit, CORS
 
 📝 License
 

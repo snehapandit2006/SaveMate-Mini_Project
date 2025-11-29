@@ -21,9 +21,9 @@ Live Demo: (add link)
 
 Frontend: /frontend
 
-Backend: /backend
+Backend: [/backend](https://savemate-mini-project-1.onrender.com/)
 
-AI Service: /ai-service
+AI Service:  [/api](https://savemate-mini-project.onrender.com)
 
 Postman Collection: /docs/SaveMate_API.postman.json
 

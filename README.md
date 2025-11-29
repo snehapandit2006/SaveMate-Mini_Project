@@ -1,235 +1,145 @@
-💰 SaveMate — Smart Finance & Learning Companion
+# 💰 SaveMate — Smart Finance & Learning Companion
 
+[![Node.js](https://img.shields.io/badge/Node.js-18.x-green?logo=node.js)](https://nodejs.org/)
+[![React](https://img.shields.io/badge/React-18-blue?logo=react)](https://reactjs.org/)
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-13-blue?logo=postgresql)](https://www.postgresql.org/)
+[![HuggingFace](https://img.shields.io/badge/HuggingFace-AI-orange?logo=huggingface)](https://huggingface.co/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Status](https://img.shields.io/badge/Status-In%20Progress-orange)]()
 
+> **SaveMate** — an AI-enhanced full-stack app to help students and young earners set budgets, track expenses, achieve goals, and learn via short AI summaries.
 
+---
 
+# 🚀 Quick links
+- Live demo: _(add link when deployed)_
+- Frontend: `frontend/`
+- Backend: [/backend](https://savemate-mini-project-1.onrender.com/)
+- AI service: [/api](https://savemate-mini-project.onrender.com)
+- Postman collection: `docs/SaveMate_API.postman_collection.json`
 
+---
 
+# 🖼 Visual Architecture
 
+> Add the following images to `docs/`:
+> - `docs/architecture.png` — full system architecture (frontend, backend, AI service, DB, cache, storage)
+> - `docs/flowchart.png` — backend flowchart showing auth, DB, AI, Redis, S3
 
+![System Architecture](docs/architecture.png "SaveMate System Architecture")
+*Figure: SaveMate system architecture — frontend ↔ backend ↔ AI microservice ↔ DB & storage*
 
+![Backend Flowchart](docs/flowchart.png "SaveMate Backend Flowchart")
+*Figure: Backend data flow — auth, DB CRUD, AI summarization, OTP/Redis, storage*
 
+---
 
+# ✨ Core Features (point-to-point)
 
+- **Authentication & Security**
+  - JWT-based auth, Argon2 password hashing
+  - Email & OTP verification (user + parental flows)
+  - AES-256-GCM encryption for sensitive fields
 
+- **Expense & Goal Management**
+  - CRUD endpoints for expenses and goals
+  - Category-based expense tracking, progress bars for goals
 
-A secure, student-friendly finance app that builds better saving habits using goals, streaks, parental lock, emergency mode, and AI-based insights.
+- **Budget & Alerts**
+  - Daily/weekly/monthly budget limits
+  - Auto-alerts for overspending and parental lock triggers
 
-🚀 Quick Links
+- **AI Summarization**
+  - AI microservice (FastAPI) using HuggingFace (T5/BART) — returns short “insights” / shorts
+  - Backend stores AI insights and serves feed to UI
 
-Live Demo: (add link)
+- **Parental Controls**
+  - OTP-secured approvals and role-based access for parent accounts
 
-Frontend: /frontend
+- **DevOps & Scalability**
+  - Docker + docker-compose for local dev (backend, postgres, redis)
+  - Deploy-ready (Vercel frontend, Render/Heroku backend, Supabase/Neon Postgres)
 
-Backend: [/backend](https://savemate-mini-project-1.onrender.com/)
+---
 
-AI Service:  [/api](https://savemate-mini-project.onrender.com)
+# 🧩 Repo structure (short)
 
-Postman Collection: /docs/SaveMate_API.postman.json
+    save-mate/
+    ├─ frontend/ # React + Tailwind app
+    ├─ backend/ # Node/Express API (Sequelize + Postgres)
+    ├─ ai-service/ # FastAPI summarizer (HuggingFace)
+    ├─ docs/ # diagrams, postman collection
+    └─ README.md
 
-📌 Table of Contents
 
-Overview
+---
 
-Features
+# ⚙️ Getting started (quick)
 
-Architecture
-
-Data Model
-
-Setup Guide
-
-Acceptance Criteria
-
-Future Enhancements
-
-Team
-
-License
-
-🧠 Overview
-
-Students and young adults struggle with budgeting, overspending, and maintaining saving habits. SaveMate solves this using:
-
-Goal-based saving
-
-Budget limits & overspending alerts
-
-Automated streak habit-building
-
-OTP-secured parental lock
-
-Emergency mode to restrict high-value spending
-
-AES-256 encrypted data + JWT auth
-
-AI-based categorization & insights
-
-✨ Features
-<details> <summary><strong>🔐 Authentication & Security</strong></summary>
-
-JWT login system
-
-AES-256 encrypted sensitive fields
-
-Password hashing (bcrypt)
-
-Parent/Child role-based access
-
-OTP verification for parental lock
-
-</details> <details> <summary><strong>💸 Expense Management</strong></summary>
-
-Add / edit / delete expenses
-
-Categories: Food, Travel, Education, Shopping, Rent, Others
-
-Search + pagination
-
-CSV export
-
-</details> <details> <summary><strong>🎯 Goal Setting & Auto-Saving</strong></summary>
-
-Create long-term savings goals
-
-Auto-money-save logic
-
-Goal progress indicators
-
-Real-time milestone notifications (WebSocket)
-
-</details> <details> <summary><strong>⚠️ Budget & Alerts</strong></summary>
-
-Monthly spending limits
-
-Overspending warnings
-
-Parent alert trigger
-
-</details> <details> <summary><strong>🛡 Parental Lock (OTP-Based)</strong></summary>
-
-Triggered automatically when user overspends
-
-OTP delivered via email
-
-Lock/unlock dashboard features
-
-</details> <details> <summary><strong>🔥 Emergency Mode</strong></summary>
-
-Blocks non-essential expenses
-
-Restricts large-value transactions
-
-Notifies parent
-
-</details> <details> <summary><strong>📅 Streak Habit System</strong></summary>
-
-Daily saving streak
-
-Reward-based motivation
-
-Auto-reset on missed days
-
-</details> <details> <summary><strong>📊 Analytics Dashboard</strong></summary>
-
-Charts include:
-
-Monthly spending
-
-Category-wise analytics
-
-Goal progress
-
-Streak heatmap
-
-</details>
-🖼 Architecture
-System Architecture
-Frontend (React + Tailwind)
-        ↓
-Backend (Node.js + Express)
-        ↓
-MongoDB Atlas (Database)
-        ↓
-AI Microservice (FastAPI + HuggingFace)
-        ↓
-WebSocket Notifications
-
-
-Add these images inside /docs/:
-
-architecture.png
-
-flowchart.png
-
-🗂 Data Model
-MongoDB Collections
-Users
-email, password, role, encryptedFields
-
-Expenses
-amount, category, date, userId
-
-Goals
-target, savedAmount, deadline, autoSave
-
-Budgets
-limit, month, warnings
-
-Streaks
-currentStreak, lastUpdated
-
-Notifications
-type, message, timestamp
-
-⚙️ Setup Guide
-Backend Setup
+## Backend
+```bash
 cd backend
 cp .env.example .env
+# edit .env (DATABASE_URL, JWT_SECRET, AES_SECRET)
 npm install
 npm run dev
-
-Frontend Setup
+```
+## Frontend
+```
 cd frontend
 cp .env.example .env
+# set VITE_API_URL
 npm install
 npm run dev
-
-AI Microservice Setup
+```
+## AI Service (optional)
+```
 cd ai-service
+# create venv & install
 pip install -r requirements.txt
 uvicorn src.main:app --reload --port 8001
+```
+📦 Deployment hints
+  Use managed Postgres (Supabase / Neon / RDS) and enable SSL in db.js.
+  Store secrets in environment variables or a secret manager (do not commit .env).
+  Use Redis for OTP store & caching; replace in-memory OTP store before production.
+  Add rate limiting for OTP endpoints and login.
+  
 
-🧪 Acceptance Criteria
+🧪 Testing & CI
+  Tests: backend uses Jest + Supertest for integration tests; frontend uses Vitest or Jest.
+  CI: .github/workflows/ci.yml — lint, test, build, (optional) dockerize.
+  
 
-JWT should be issued in <5 seconds
+📈 Roadmap (short)
+   Auth: JWT + OTP + Argon2
+   DB: PostgreSQL models (User, Expense, Goal)
+   Expense & Goal CRUD (complete + testing)
+   Budget & Parental Lock (integration)
+   AI fine-tuning & production deployment
+   Security audit & final deployment
+   
 
-Adding an expense should instantly broadcast via WebSocket
+👩‍💻 Contributors
 
-Goal progress reaching 50% triggers notification
+| Name             | Role                      | Email                                                                       | GitHub                                                      | Institute               |
+| ---------------- | ------------------------- | --------------------------------------------------------------------------- | ----------------------------------------------------------- | ----------------------- |
+| **Sneha Pandit** | Backend & Security Lead   | [sneha.pandit_cs.aiml23@gla.ac.in](mailto:sneha.pandit_cs.aiml23@gla.ac.in) | [sneha20061901@gmail.com](mailto:sneha20061901@gmail.com)   | GLA University, Mathura |
+| **Shristi Negi** | AI & UX Prototyping       | [shristi.negi_cs.aiml23@gla.ac.in](mailto:shristi.negi_cs.aiml23@gla.ac.in) | [shristinegi658@gmail.com](mailto:shristinegi658@gmail.com) | GLA University, Mathura |
+| **Avani Garg**   | Frontend & ML Integration | [avani.garg_cs.aiml23@gla.ac.in](mailto:avani.garg_cs.aiml23@gla.ac.in)     | [gargavni2005@gmail.com](mailto:gargavni2005@gmail.com)     | GLA University, Mathura |
 
-Overspending triggers OTP parental lock
 
-🔮 Future Enhancements
+📚 References & Resources
 
-UPI/Bank integration
+    Sequelize docs — https://sequelize.org
+    HuggingFace models — https://huggingface.co/models
+    OWASP best practices — https://owasp.org
+    Node & Express security — Helmet, rate-limit, CORS
 
-AI-driven budgeting predictions
-
-Group savings & collaborative goals
-
-Mobile app (React Native)
-
-OCR receipt scanning
-
-Investment recommendations
-
-👩‍💻 Team
-Name	Role	Responsibilities
-Sneha Pandit	Backend & Security Lead	Auth, encryption, parental lock, emergency mode, WebSocket
-Avani Garg	Frontend Developer	UI, dashboards, charts, animations
-Shristi Negi	AI & UX Prototyping	Categorization, AI insights, UX polishing
 📝 License
 
 MIT © 2025 Team SaveMate
-  
+
+
+--- now i want you to update this according to the synopsis 
+

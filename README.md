@@ -12,8 +12,8 @@
 ---
 
 # 🚀 Quick links
-- Live demo: [_live_](https://savemate-mini-project-2.onrender.com)
-- Frontend: [`frontend/`](https://www.figma.com/make/jdd0mFaTd36XGCvrv9k7qG/SaveMate-Workflow-Overview?node-id=0-1&t=5AIygvC95z8BYyDY-1 )
+- Live demo: [_live_]([https://savemate-mini-project-2.onrender.com](http://localhost:4173/SaveMate-Mini_Project/))
+- Frontend: [`frontend/`](http://localhost:4173/SaveMate-Mini_Project/))
 - Backend: [/backend](https://savemate-mini-project-1.onrender.com/)
 - AI service: [/api](https://savemate-mini-project.onrender.com)
 - Postman collection: `docs/SaveMate_API.postman_collection.json`

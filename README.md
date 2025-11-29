@@ -12,7 +12,7 @@
 ---
 
 # 🚀 Quick links
-- Live demo: [_(add link when deployed)_](https://savemate-mini-project-2.onrender.com)
+- Live demo: [_live_](https://savemate-mini-project-2.onrender.com)
 - Frontend: [`frontend/`](https://www.figma.com/make/jdd0mFaTd36XGCvrv9k7qG/SaveMate-Workflow-Overview?node-id=0-1&t=5AIygvC95z8BYyDY-1 )
 - Backend: [/backend](https://savemate-mini-project-1.onrender.com/)
 - AI service: [/api](https://savemate-mini-project.onrender.com)

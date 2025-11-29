@@ -1,131 +1,152 @@
-# 💰 SaveMate — Smart Finance & Learning Companion
+# SaveMate Frontend
 
-[![Node.js](https://img.shields.io/badge/Node.js-18.x-green?logo=node.js)](https://nodejs.org/)
-[![React](https://img.shields.io/badge/React-18-blue?logo=react)](https://reactjs.org/)
-[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-13-blue?logo=postgresql)](https://www.postgresql.org/)
-[![HuggingFace](https://img.shields.io/badge/HuggingFace-AI-orange?logo=huggingface)](https://huggingface.co/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Status](https://img.shields.io/badge/Status-In%20Progress-orange)]()
+A modern, responsive financial management app for children and teens with parental controls.
 
-> **SaveMate** — an AI-enhanced full-stack app to help students and young earners set budgets, track expenses, achieve goals, and learn via short AI summaries.
+## 🚀 Quick Start
 
----
-
-# 🚀 Quick links
-- Live demo: [_live_]([https://savemate-mini-project-2.onrender.com](http://localhost:4173/SaveMate-Mini_Project/))
-- Frontend: [`frontend/`](http://localhost:4173/SaveMate-Mini_Project/))
-- Backend: [/backend](https://savemate-mini-project-1.onrender.com/)
-- AI service: [/api](https://savemate-mini-project.onrender.com)
-- Postman collection: `docs/SaveMate_API.postman_collection.json`
-
----
-
-# ✨ Core Features (point-to-point)
-
-- **Authentication & Security**
-  - JWT-based auth, Argon2 password hashing
-  - Email & OTP verification (user + parental flows)
-  - AES-256-GCM encryption for sensitive fields
-
-- **Expense & Goal Management**
-  - CRUD endpoints for expenses and goals
-  - Category-based expense tracking, progress bars for goals
-
-- **Budget & Alerts**
-  - Daily/weekly/monthly budget limits
-  - Auto-alerts for overspending and parental lock triggers
-
-- **AI Summarization**
-  - AI microservice (FastAPI) using HuggingFace (T5/BART) — returns short “insights” / shorts
-  - Backend stores AI insights and serves feed to UI
-
-- **Parental Controls**
-  - OTP-secured approvals and role-based access for parent accounts
-
-- **DevOps & Scalability**
-  - Docker + docker-compose for local dev (backend, postgres, redis)
-  - Deploy-ready (Vercel frontend, Render/Heroku backend, Supabase/Neon Postgres)
-
----
-
-# 🧩 Repo structure (short)
-
-    save-mate/
-    ├─ frontend/ # React + Tailwind app
-    ├─ backend/ # Node/Express API (Sequelize + Mongodb Atlas)
-    ├─ ai-service/ # FastAPI summarizer (HuggingFace)
-    ├─ docs/ # diagrams, postman collection
-    └─ README.md
-
-
----
-
-# ⚙️ Getting started (quick)
-
-## Backend
 ```bash
-cd backend
-cp .env.example .env
-# edit .env (DATABASE_URL, JWT_SECRET, AES_SECRET)
+# Install dependencies
 npm install
+
+# Start development server
 npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
+
+# Deploy to GitHub Pages
+npm run deploy
 ```
-## Frontend
+
+## 🏗️ Tech Stack
+
+- **Framework**: React 18 + TypeScript
+- **Build Tool**: Vite 6
+- **UI Components**: Radix UI + Tailwind CSS
+- **Icons**: Lucide React
+- **HTTP Client**: Axios
+- **PWA**: Vite PWA Plugin
+
+## 📁 Project Structure
+
 ```
-cd frontend
-cp .env.example .env
-# set VITE_API_URL
-npm install
-npm run dev
+Frontend/
+├── src/
+│   ├── components/       # React components
+│   │   ├── ui/          # Reusable UI components
+│   │   └── figma/       # Figma-imported components
+│   ├── services/        # API service layer
+│   │   ├── authService.ts
+│   │   ├── transactionService.ts
+│   │   └── goalService.ts
+│   ├── hooks/           # Custom React hooks
+│   ├── lib/             # Utilities and API config
+│   ├── assets/          # Images and static files
+│   └── styles/          # Global styles
+├── public/              # Static assets
+└── dist/                # Production build
 ```
-## AI Service (optional)
+
+## 🔧 Configuration
+
+### Environment Variables
+
+Create `.env` files for different environments:
+
+**`.env.development`**
 ```
-cd ai-service
-# create venv & install
-pip install -r requirements.txt
-uvicorn src.main:app --reload --port 8001
+VITE_BACKEND_URL=http://localhost:4000
 ```
-📦 Deployment hints
-  Use managed Postgres (Supabase / Neon / RDS) and enable SSL in db.js.
-  Store secrets in environment variables or a secret manager (do not commit .env).
-  Use Redis for OTP store & caching; replace in-memory OTP store before production.
-  Add rate limiting for OTP endpoints and login.
-  
 
-🧪 Testing & CI
-  Tests: backend uses Jest + Supertest for integration tests; frontend uses Vitest or Jest.
-  CI: .github/workflows/ci.yml — lint, test, build, (optional) dockerize.
-  
+**`.env.production`**
+```
+VITE_BACKEND_URL=https://savemate-mini-project-1.onrender.com
+```
 
-📈 Roadmap (short)
-   Auth: JWT + OTP + Argon2
-   DB: PostgreSQL models (User, Expense, Goal)
-   Expense & Goal CRUD (complete + testing)
-   Budget & Parental Lock (integration)
-   AI fine-tuning & production deployment
-   Security audit & final deployment
-   
+### Vite Configuration
 
-👩‍💻 Contributors
+The `vite.config.ts` is configured for:
+- GitHub Pages deployment with base path
+- PWA support
+- Path aliases (`@/` → `src/`)
+- React Fast Refresh
 
-| Name             | Role                      | Email                                                                       | GitHub                                                      | Institute               |
-| ---------------- | ------------------------- | --------------------------------------------------------------------------- | ----------------------------------------------------------- | ----------------------- |
-| **Sneha Pandit** | Backend & Security Lead   | [sneha.pandit_cs.aiml23@gla.ac.in](mailto:sneha.pandit_cs.aiml23@gla.ac.in) | [sneha20061901@gmail.com](mailto:sneha20061901@gmail.com)   | GLA University, Mathura |
-| **Shristi Negi** | AI & UX Prototyping       | [shristi.negi_cs.aiml23@gla.ac.in](mailto:shristi.negi_cs.aiml23@gla.ac.in) | [shristinegi658@gmail.com](mailto:shristinegi658@gmail.com) | GLA University, Mathura |
-| **Avani Garg**   | Frontend & ML Integration | [avani.garg_cs.aiml23@gla.ac.in](mailto:avani.garg_cs.aiml23@gla.ac.in)     | [gargavni2005@gmail.com](mailto:gargavni2005@gmail.com)     | GLA University, Mathura |
+## 🌐 API Integration
 
+The frontend connects to the SaveMate backend API:
 
-📚 References & Resources
+### Services Available
 
-    Sequelize docs — https://sequelize.org
-    HuggingFace models — https://huggingface.co/models
-    OWASP best practices — https://owasp.org
-    Node & Express security — Helmet, rate-limit, CORS
+- **Authentication**: Login, signup, logout
+- **Transactions**: Create, read, delete transactions
+- **Goals**: Manage savings goals
+- **Stats**: Get spending statistics
 
-📝 License
+### Example Usage
 
-MIT © 2025 Team SaveMate
+```typescript
+import { transactionService } from './services/transactionService';
 
+// Get transactions
+const transactions = await transactionService.getTransactions();
 
---- now i want you to update this according to the synopsis 
+// Create transaction
+await transactionService.createTransaction({
+  amount: 100,
+  category: 'Food',
+  description: 'Lunch',
+  type: 'expense'
+});
+```
 
+## 🎨 Features
+
+- ✅ Dashboard with spending overview
+- ✅ Budget tracking by category
+- ✅ Savings goals management
+- ✅ Rewards system
+- ✅ Emergency mode
+- ✅ Parental controls
+- ✅ PWA support (offline capable)
+- ✅ Responsive design
+
+## 🐛 Troubleshooting
+
+### Build Issues
+
+If you encounter import errors:
+```bash
+node fix-all-imports.js
+npm run build
+```
+
+### API Connection Issues
+
+1. Check backend is running
+2. Verify CORS configuration
+3. Check environment variables
+4. Inspect browser console for errors
+
+## 📦 Deployment
+
+See [DEPLOYMENT.md](./DEPLOYMENT.md) for detailed deployment instructions.
+
+### Quick Deploy to GitHub Pages
+
+```bash
+npm run deploy
+```
+
+## 🤝 Contributing
+
+1. Create a feature branch
+2. Make your changes
+3. Test thoroughly
+4. Submit a pull request
+
+## 📄 License
+
+Private project for SaveMate Mini Project

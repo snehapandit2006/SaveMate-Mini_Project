@@ -52,7 +52,7 @@
 
     save-mate/
     ├─ frontend/ # React + Tailwind app
-    ├─ backend/ # Node/Express API (Sequelize + Postgres)
+    ├─ backend/ # Node/Express API (Sequelize + Mongodb Atlas)
     ├─ ai-service/ # FastAPI summarizer (HuggingFace)
     ├─ docs/ # diagrams, postman collection
     └─ README.md

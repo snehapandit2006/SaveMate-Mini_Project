@@ -20,20 +20,6 @@
 
 ---
 
-# 🖼 Visual Architecture
-
-> Add the following images to `docs/`:
-> - `docs/architecture.png` — full system architecture (frontend, backend, AI service, DB, cache, storage)
-> - `docs/flowchart.png` — backend flowchart showing auth, DB, AI, Redis, S3
-
-![System Architecture](docs/architecture.png "SaveMate System Architecture")
-*Figure: SaveMate system architecture — frontend ↔ backend ↔ AI microservice ↔ DB & storage*
-
-![Backend Flowchart](docs/flowchart.png "SaveMate Backend Flowchart")
-*Figure: Backend data flow — auth, DB CRUD, AI summarization, OTP/Redis, storage*
-
----
-
 # ✨ Core Features (point-to-point)
 
 - **Authentication & Security**

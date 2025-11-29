@@ -3,6 +3,7 @@ import { Shield, Users, User } from 'lucide-react';
 import { Button } from './ui/button';
 import { Card, CardContent } from './ui/card';
 import { ImageWithFallback } from './figma/ImageWithFallback';
+import saveMateLogoImage from '../assets/4d7c14c68e3799f5818cedf8d6f63b89d97eb538.png';
 
 
 interface LoginTypeSelectionProps {

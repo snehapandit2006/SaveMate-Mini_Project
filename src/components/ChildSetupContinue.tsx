@@ -6,6 +6,7 @@ import { Label } from './ui/label';
 import { Card, CardContent } from './ui/card';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select';
 import { ImageWithFallback } from './figma/ImageWithFallback';
+import saveMateLogoImage from '../assets/4d7c14c68e3799f5818cedf8d6f63b89d97eb538.png';
 
 interface SetupData {
   bankName: string;

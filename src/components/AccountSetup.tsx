@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ArrowRight, ArrowLeft, Check, Shield, CreditCard, User, Eye, EyeOff } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
+import saveMateLogoImage from '../assets/4d7c14c68e3799f5818cedf8d6f63b89d97eb538.png';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Label } from './ui/label';

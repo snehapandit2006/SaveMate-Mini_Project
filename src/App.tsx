@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Home, Target, TrendingUp, Trophy, Settings, X, AlertTriangle } from 'lucide-react';
 import { ImageWithFallback } from './components/figma/ImageWithFallback';
+import saveMateLogoImage from './assets/4d7c14c68e3799f5818cedf8d6f63b89d97eb538.png';
 
 
 import Dashboard from './components/Dashboard';
